@@ -18,23 +18,10 @@ the chosen suffix, not a literal character. For example, a tool named
 uses `init_my_tool.py`. Use lowercase names and convert hyphens to underscores
 in the Python filename.
 
-1. From the directory where the new project should live, copy the template:
-
-   ```bash
-   init-template -t template-init-script init-my-tool
-   cd init-my-tool
-   ```
-
-   This requires the `init-template` tool from `my-templates` to be installed
-   and this template to be in its `templates/` directory. Alternatively, copy
-   this template's contents into a new `init-my-tool/` folder, including hidden
-   files but excluding `.git/`, `.venv/`, and `__pycache__/`. Do not overwrite an
-   existing project. Keep this source template unchanged.
-
-2. Rename `init-example` to `init-my-tool` and `init_example.py` to
+1. Rename `init-example` to `init-my-tool` and `init_example.py` to
    `init_my_tool.py`.
 
-3. Replace every `init-example` and `init_example.py` reference in the launcher,
+2. Replace every `init-example` and `init_example.py` reference in the launcher,
    `install.sh`, `uninstall.sh`, and Python implementation with the chosen names.
    In `pyproject.toml`, change `project.name` to `init-my-tool` and set a useful
    description. Update the Python module docstring and argparse description too.
@@ -48,7 +35,7 @@ in the Python filename.
    Commit `uv.lock` with the project; do not leave its package name as
    `init-example` or edit the lockfile by hand.
 
-4. Implement the requested behavior in `init_my_tool.py`:
+3. Implement the requested behavior in `init_my_tool.py`:
    - Keep Python `>=3.10` and standard-library-only code (`dependencies = []`).
    - Keep `argparse` with an explicit `prog` matching the command name.
    - Use `sys.exit("error: ...")` for operational failures, importing `sys`
@@ -63,7 +50,7 @@ in the Python filename.
    - Preserve the installers' ownership checks so unrelated commands are
      never replaced or removed.
 
-5. Validate from a separate scratch directory using the checklist below, then
+4. Validate from a separate scratch directory using the checklist below, then
    replace this README with the new tool's purpose, arguments, examples,
    requirements, and install/uninstall instructions.
 
