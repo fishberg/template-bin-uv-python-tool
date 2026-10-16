@@ -1,6 +1,6 @@
 [project]
-name = "init-example"
+name = "example-tool"
 version = "0.1.0"
-description = "Starting point for a new initialization tool"
+description = "Starting point for a new Python command-line tool"
 requires-python = ">=3.10"
 dependencies = []

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Symlink the init-example command into ~/.local/bin.
+# Symlink the example-tool command into ~/.local/bin.
 set -euo pipefail
 DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-SRC="$DIR/init-example"
+SRC="$DIR/example-tool"
 BIN="$HOME/.local/bin"
-DEST="$BIN/init-example"
+DEST="$BIN/example-tool"
 
 mkdir -p "$BIN"
 if [[ -L "$DEST" && "$(readlink -f "$DEST")" == "$SRC" ]]; then

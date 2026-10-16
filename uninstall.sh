@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Remove the init-example symlink only if it points into this folder.
+# Remove the example-tool symlink only if it points into this folder.
 set -euo pipefail
 DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-DEST="$HOME/.local/bin/init-example"
+DEST="$HOME/.local/bin/example-tool"
 
 if [[ -L "$DEST" && "$(readlink "$DEST")" == "$DIR/"* ]]; then
     rm "$DEST"

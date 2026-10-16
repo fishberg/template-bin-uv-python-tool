@@ -3,6 +3,6 @@ revision = 3
 requires-python = ">=3.10"
 
 [[package]]
-name = "init-example"
+name = "example-tool"
 version = "0.1.0"
 source = { virtual = "." }
