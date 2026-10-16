@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Run the uv project through symlinks, preserving the caller's cwd.
+set -euo pipefail
+DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+exec uv run --quiet --project "$DIR" python "$DIR/init_example.py" "$@"
